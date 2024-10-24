@@ -46,9 +46,9 @@ function newsOne($id = 0, $base = '')
 
 function newsSearch($search = '', $base = '')
 {
-    $url = $base . '/api/news';
+    $search = urlencode($search);
 
-    if ($search) $url .= '?search=' . $search;
+    $url = $base . '/api/news' . '?search=' . $search;
 
     $curl = curl_init();
 
